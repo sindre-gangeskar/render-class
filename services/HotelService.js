@@ -7,7 +7,7 @@ class HotelService {
 
     //Create a hotel using raw SQL
     async create(name, location) {
-        sequelize.query('INSERT INTO hotels (Name, Location) VALUES (:Name, :Location)', {
+        sequelize.query('INSERT INTO Hotels (Name, Location) VALUES (:Name, :Location)', {
             replacements:
             {
                 Name: name,
@@ -22,7 +22,7 @@ class HotelService {
 
     //Get all hotels using raw SQL
     async get() {
-        const hotels = await sequelize.query('SELECT * FROM hotels', {
+        const hotels = await sequelize.query('SELECT * FROM Hotels', {
             type: QueryTypes.SELECT,
         });
         return hotels;
